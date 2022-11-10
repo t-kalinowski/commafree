@@ -1,0 +1,17 @@
+Package: commafree
+Title: Call Functions Without Commas Between Arguments
+Version: 0.1.0
+Authors@R:
+    person("Tomasz", "Kalinowski",
+           email = "kalinowskit@gmail.com",
+           role = c("aut", "cre"))
+Description: Provides the "comma-free call" operator: '%(%'. Use it to call a
+    function without commas between the arguments. Just replace the '('
+    with '%(%' in a function call, supply your arguments as standard R
+    expressions enclosed by '{ }', and be free of commas (for that call).
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+URL: https://github.com/t-kalinowski/commafree
+BugReports: https://github.com/t-kalinowski/commafree/issues
