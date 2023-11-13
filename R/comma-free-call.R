@@ -82,10 +82,12 @@
   for(i in seq_along(args)) {
     ar <- args[[i]]
     if(is.call(ar) && identical(ar[[1L]], quote(`=`))) {
-      if(!is.symbol(nm <- ar[[2L]])) stop("Left hand side of `=` must be named")
+      if(!(is.symbol(nm <- ar[[2L]]) || is.character(nm)))
+        stop("Left hand side of `=` must be named")
       nms[i] <- as.character(nm)
       args[i] <- ar[3L]
     }
+    # TODO: support for rlang::`:=` ??
 
     if((nzchar(nms[i]) && identical(args[[i]], quote(`,`))) ||
        identical(args[[i]], quote(`,,`)))
